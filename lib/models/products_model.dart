@@ -2,8 +2,8 @@ class Product {
   int? _totalSize;
   int? _typeId;
   int? _offset;
-  late List<ProductModel>? _products;
-  List<ProductModel>? get products => _products;
+  late List<ProductModel> _products;
+  List<ProductModel> get products => _products;
 
   Product({required totalSize, required typeId, required offset, required products}) {
     _totalSize = totalSize;
@@ -20,7 +20,7 @@ class Product {
       _products = <ProductModel>[];
       json['products'].forEach((v) {
         // products!.add(new Products.fromJson(v));
-        _products!.add(ProductModel.fromJson(v));
+        _products.add(ProductModel.fromJson(v));
       });
     }
   }
